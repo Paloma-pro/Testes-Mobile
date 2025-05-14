@@ -1,25 +1,36 @@
-import { $ } from '@wdio/globals'
 import Page from './page.js';
 
-
 class LoginPage {
-    get email (){
-        return $('id:email')
-    }
 
-    get password (){
-        return $('android=new UiSelector().text("Password")')
-    }
+  get email (){
 
-    get btnLogin() {
-        return $('~Login')
-    }
+    return $('id:email')
 
-    async login(email, password){
-        await this.email.setValue(email)
-        await this.password.setValue(password)
-        await this.btnLogin.click()
-    }
+  }
+
+  get password (){
+
+    return $('android=new UiSelector().text("Password")')
+
+  }
+
+  get btnLogin() {
+
+    return $('~Login')
+
+  }
+
+
+
+  async login(email, password){
+
+    await this.email.setValue(email)
+
+    await this.password.setValue(password)
+
+    await this.btnLogin.click()
+
+  }
 
 }
 
